@@ -5,6 +5,9 @@ import GlobalStyles from "../Styles/GlobalStyles"
 import Theme from "../Styles/Theme";
 import Router from "./Router";
 import { useQuery } from "react-apollo-hooks";
+import Header from "./Header";
+import Nav from "./Nav";
+import Toolbar from "./Toolbar";
 
 
 const QUERY = gql`
@@ -22,6 +25,9 @@ return (
 <ThemeProvider theme={Theme}>
       <>
         <GlobalStyles />
+        <Header />
+        <Nav />
+        <Toolbar />
         <Router isLoggedIn={isLoggedIn}/>
       </>
   </ThemeProvider>
