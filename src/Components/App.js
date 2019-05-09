@@ -8,6 +8,7 @@ import { useQuery } from "react-apollo-hooks";
 import Header from "./Header";
 import Nav from "./Nav";
 import Toolbar from "./Toolbar";
+import Footer from "./Footer";
 
 
 const QUERY = gql`
@@ -28,7 +29,9 @@ return (
         <Header />
         <Nav />
         <Toolbar />
-        <Router isLoggedIn={isLoggedIn}/>
+        <Router isLoggedIn={true}/>
+
+        <Footer />
       </>
   </ThemeProvider>
   );
