@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const CategorySub = styled.div`
         display: none;
         height: 0;
@@ -9,7 +8,12 @@ const CategorySub = styled.div`
         height: 150px;
         border-bottom: 1px solid #ddd;
         transition: height 5s linear;
-        opacity: 0.6 
+        opacity: 0.78
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
 
         `;
 
@@ -19,7 +23,7 @@ const Container = styled.div`
         ${CategorySub} {
             display: block;
             height: max;
-
+  
         }
 }
 `;
@@ -41,7 +45,7 @@ const Warp = styled.div`
         margin: auto; 
     `;
 const CategoryWarp = styled.div`
-    width: 1250px;
+         width: 1250px;
     margin: auto; 
 `;
 
@@ -50,6 +54,12 @@ const List = styled.ul`
         width: 100%;
         vertical-align: middle;
         text-align: center;
+        &:hover {
+            ${CategorySub} {
+                display: block;
+                height: max;
+      
+            }
 
     `;
 
@@ -63,8 +73,9 @@ const ListItem = styled.li`
     `;
 
 const Link = styled.a`
-    line-height: 50px;
-    font-size: 12px;
+        line-height: 50px;
+        font-size: 12px;
+    
 
     `;
 
@@ -73,6 +84,7 @@ const WarpUl = styled.div`
         width: 100%;
         vertical-align: middle;
         text-align: center;
+        position: relative;
 
         `;
 
@@ -81,21 +93,24 @@ const CategorySub2 = styled.ul`
         top: 0;
         display: inline-block;
 
+
     `
 const Good = styled.li`
         background: none;
         padding-left: 0;
         text-align: center;
         line-height: 2.0;
+        &:hover {
+            color: ${props=> props.theme.backColor};
+            text-decoration: underline;
+
+        }
 
     `;
 
 const GoodLink = styled.a`
     font-size: 12px;
-    &:hover {
-        text-decoration: underline ;
 
-    }
     `;
 
 export default () => (
@@ -115,7 +130,7 @@ export default () => (
             </Warp>
         </Toobar>
 
-
+        
         <CategoryWarp>
             <WarpUl>
                 <CategorySub>

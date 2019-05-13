@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Input from "../../Components/Input";
 
 const StepName = styled.h4`
 margin-bottom: 10px;
@@ -8,7 +9,7 @@ font-weight: 600;
 `;
 
 
-const FormWarp = styled.div`
+const FormWrap = styled.div`
 margin: 10px auto 15px;
 
 `;
@@ -40,35 +41,20 @@ th {
     font-size: 12px;
 }
 td {
+    font-size: 12px;
     border-top: 1px solid #ddd;
     background: #fff;
     border-left: 1px solid #eee;
     padding: 10px 15px;
     text-align: left;
-    input: {
-        border: 1px solid #ccc;
-        background: #fff;
-        height: 20px;
-        line-height: 20px;
-        text-indent: 3px;
-        padding: 0;
+    
 
-        text-rendering: auto;
-        letter-spacing: normal;
-        word-spacing: normal;
-        text-transform: none;
-        text-indent: 0px;
-        text-shadow: none;
-        display: inline-block;
-        text-align: start;
-        margin: 0em;
-        font: 400 12px Arial;
-    }
     span {
         font-size: 11px;
         color: #848484;
     }
     select {
+        align-items: center;
         border: 1px solid #ccc;
         border-radius: 0;
         height: 22px;
@@ -85,58 +71,130 @@ td {
         text-align: start;
         margin: 0em;
         font: 400 12px Arial;
+        overflow: visible !important;
+
 
     }
     div {
+        padding-top: 10px !important;
         font-size: 11px;
         color: #848484;
+        padding-bottom: 5px !important;
+
+    }
+    label {
+        display: inline-block;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-right: 10px;
+        
+        font-size: 12px;
+        color: #000;
     }
 }
 
 
 `;
 
+const Button = styled.button`
+padding: 5px 7px 4px;
+min-width: 0;
+font-size: 11px;
+margin: 0em;
+font: 400 12px Arial;
+word-spacing: normal;
+text-transform: none;
+text-indent: 0px;
+text-shadow: none;
+text-rendering: auto;
+color: rgb(102, 102, 102);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(204, 204, 204);
+border-image: initial;
+background: rgb(255, 255, 255);
+line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+`;
 
-export default () => (
-    <>
+const BtnWrap = styled.div`
+	margin-top: 30px;
+	text-align: center;
+
+`
+
+
+
+export default ({
+	action,
+	userName,
+	userID,
+	password,
+	rePassword,
+	nickname ,
+	birthday ,
+	gender,
+	email0,
+	email1,
+	findEmail,
+	mailing,
+	phone1 ,
+	phone2 ,
+	phone3 ,
+	cellphone1,
+	cellphone2,
+	cellphone3,
+	sms,
+	new_zipcode ,
+	address_type,
+	address,
+	recommend
+}) => (
+	<>
+
+
     <StepName>회원정보 입력</StepName>
+	<form>
+
     <Table>
-    <FormWarp>
+    <FormWrap>
 	<colgroup>
 		<col width="20%" /><col />
 	</colgroup>
 	<tbody>	
         <tr>
 			<th scope="row" >이름</th>			
-			<td><input type="text" size="20" /></td>
+			<td><Input type="text" size="20" name="user_name" {...userName}/></td>
 		</tr>
         <tr>
 			<th scope="row" >아이디</th>			
 			<td>
-					<input type="text" size="20" /> <span>공백 없는 영문, 숫자 포함 6-20자</span>
-					<span id="id_info" class="small"></span>
+					<Input type="text" size="20" name="userid" {...userID}/> <span>공백 없는 영문, 숫자 포함 6-20자</span>
+					<span></span>
 			</td>
 		</tr>
         <tr>
 			<th scope="row" >비밀번호</th>			
-			<td><input type="password" size="20"/> <span class="desc">공백 없는 영문, 숫자 포함 6-20자 </span></td>
+			<td><Input type="password" size="20" name="password" {...password}/> <span>공백 없는 영문, 숫자 포함 6-20자 </span></td>
 		</tr>		
 		<tr>
 			<th scope="row" >비밀번호 확인</th>			
-			<td><input type="password" size="20"/> <span class="desc">비밀번호 확인을 위해 한번 더 입력하세요.</span></td>
+			<td><Input type="password" size="20" name="re_password" {...rePassword} /> <span>비밀번호 확인을 위해 한번 더 입력하세요.</span></td>
 		</tr>		
 		<tr>
 			<th scope="row" >닉네임</th>			
-			<td><input type="text" maxlength="10" size="20"/></td>
+			<td><Input type="text" maxlength="10" size="20" name="nickname" {...nickname} /></td>
 		</tr>
 		<tr>
-			<th scope="row" class="required">생년월일</th>			
-			<td><input type="text" value=""maxlength="10" size="20" readonly/></td>
+			<th scope="row">생년월일</th>			
+			<td><Input type="text" name="birthday" value=""maxlength="10" size="20" readonly {...birthday}/></td>
 		</tr>	
         <tr>
 			<th scope="row">기념일</th>			
 			<td>
-				<select>
+				<select  name="anniversary[]">
 					<option value="01" >01</option>
 					<option value="02" >02</option>
 					<option value="03" >03</option>
@@ -150,7 +208,7 @@ export default () => (
 					<option value="11" >11</option>
 					<option value="12" >12</option>
 				</select>&nbsp;월&nbsp;
-				<select>
+				<select  name="anniversary[]">
 					<option value="01" >01</option>
 					<option value="02" >02</option>
 					<option value="03" >03</option>
@@ -189,14 +247,15 @@ export default () => (
         <tr>
 			<th scope="row" >성별</th>			
 			<td>
-				<label><input type="radio" value="male"  /> 남자</label>
-				<label><input type="radio" value="female"    /> 여자</label>
+				<label><Input type="radio" name="gender" value="male" {...gender} /> 남자</label>
+				<label><Input type="radio" name="gender" value="female" {...gender}  /> 여자</label>
 			</td>
 		</tr>
 		<tr>
 			<th scope="row" >이메일</th>			
-			<td><input type="text" name="email[0]" value="" size="20" /> @ <input type="text" name="email[1]" value="" size="20" />
-			<select>
+			<td><Input type="email" name="email[0]" size="20" {...email0} /> @ <Input type="text" name="email[1]"  size="20" {...email1} />
+            &nbsp;
+			<select name="find_email" {...findEmail} >
 				<option value="">직접선택</option>
 				<option value="naver.com">naver.com</option>
 				<option value="nate.com">nate.com</option>
@@ -211,19 +270,19 @@ export default () => (
 				<option value="freechal.com">freechal.com</option>
 				<option value="hanmail.net">hanmail.net</option>
 				<option value="hotmail.com">hotmail.com</option>
-			</select> &nbsp;<label class="small"><input type="checkbox" name="mailing" value="Y" /> 정보메일을 수신하겠습니다.</label>
-			<div class="pdt10 desc">이메일 수신에 동의하시면 여러가지 할인혜택과 각종 이벤트 정보를 받아보실 수 있습니다.<br />회원가입관련, 주문배송관련 등의 메일은 수신동의와 상관없이 모든 회원에게 발송됩니다.</div></td>
+			</select> &nbsp;<label><Input type="checkbox" name="mailing" value="Y" {...mailing}/> 정보메일을 수신하겠습니다.</label>
+			<div>이메일 수신에 동의하시면 여러가지 할인혜택과 각종 이벤트 정보를 받아보실 수 있습니다.<br />회원가입관련, 주문배송관련 등의 메일은 수신동의와 상관없이 모든 회원에게 발송됩니다.</div></td>
 		</tr>
 
         <tr>
 			<th scope="row">전화번호</th>			
-			<td><input type="text" size="6" maxlength="4"/> - <input type="text" name="phone[]" value="" size="6"  maxlength="4"/> - <input type="text" name="phone[]" value="" size="6"  maxlength="4"/></td>
+			<td><Input type="text" name="phone[]" size="6" maxlength="4" {...phone1}/> - <Input type="text" name="phone[]" size="6"  maxlength="4" {...phone2}/> - <Input type="text" name="phone[]" size="6"  maxlength="4" {...phone3}/></td>
 		</tr>
 		<tr>
 			<th scope="row">휴대폰번호</th>			
 			<td>
-				<input type="text" size="6"  maxlength="4" /> - <input type="text" size="6"  maxlength="4" /> - <input type="text" name="cellphone[]" value="" size="6"  maxlength="4" />
-				&nbsp;<label class="small"><input type="checkbox" value="Y" /> SMS를 수신하겠습니다.</label>
+				<Input type="text" name="cellphone[]" size="6"  maxlength="4" {...cellphone1} /> - <Input type="text" name="cellphone[]" size="6"  maxlength="4" {...cellphone2}/> - <Input type="text" name="cellphone[]" size="6"  maxlength="4" {...cellphone3} />
+				&nbsp;<label><Input type="checkbox" name="sms" value="Y" /> SMS를 수신하겠습니다.</label>
 				<div>SMS 수신에 동의하시면 여러가지 할인혜택과 각종 이벤트 정보를 받아보실 수 있습니다.<br />회원가입관련, 주문배송관련 등의 SMS는 수신동의와 상관없이 구매 회원에게 발송됩니다.</div>
 			</td>
 		</tr>
@@ -231,24 +290,38 @@ export default () => (
 			<th scope="row">주소</th>			
 			<td>
 				<div>
-					<input type="text" value="" size="15" readonly/> <a>주소찾기</a>
+					<Input type="text" name="new_zipcode" size="15" readonly {...new_zipcode} /> <a>주소찾기</a>
 				</div>
-				<input type="hidden" value=""/><input type="text" name="address" value="" class="address " size="40" readonly/> <input type="text" class="address_street hide" name="address_street" value="" size="35" readonly/> <input type="text" name="address_detail" value="" size="40" />
+				<Input type="hidden" name="address_type" {...address_type}/><Input type="text" name="address"
+				 size="40" readonly {...address}/> <Input type="text" name="address_street" value="" size="35" readonly/> <Input type="text" name="address_detail" value="" size="40" />
 				<div></div>
 			</td>
 		</tr>
 		<tr>
 			<th scope="row">추천인ID</th>			
 			<td>
-				<input type="text" name="recommend" id="recommend" value="" />
-				<button type="button" onclick="chkRecommend('u');" class="btn_move small">확인</button>
-				<span id="recommend_return_txt" class="small"></span>
+				<Input type="text" name="recommend"  {...recommend} />
+                &nbsp;
+				<Button>확인</Button>
+				<span id="recommend_return_txt"></span>
 			</td>
 		</tr>		
 	
 	</tbody>
-    </FormWarp>
+	<BtnWrap>
+		<Input type="submit" value="회원가입"></Input>
+		&nbsp;
+		<a>취소</a>
+
+
+	</BtnWrap>
+    </FormWrap>
+
     </Table>
+	</form>
+
+	
     </>
+	
 
 );

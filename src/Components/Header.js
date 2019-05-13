@@ -47,8 +47,8 @@ export default () => (
     <Header>
         <Warp>
             <List>
-                <ListItem><Link href="#">LOGIN</Link></ListItem>
-                <ListItem><Link href="#">JOIN</Link></ListItem>
+                <ListItem><Link href="/#login">LOGIN</Link></ListItem>
+                <ListItem><Link href="/#join">JOIN</Link></ListItem>
                 <ListItem><Link href="#">CART</Link></ListItem>
                 <ListItem><Link href="#">ORDER</Link></ListItem>
                 <ListItem><Link href="#">MYPAGE</Link></ListItem>

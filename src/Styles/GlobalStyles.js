@@ -24,9 +24,8 @@ export default createGlobalStyle`
     a {
         color:${props => props.theme.blackColor};
         font-family: 'Nanum Gothic', sans-serif;
-        text-decoration: none;
         cursor: pointer;    
-
+     
     }
 
 

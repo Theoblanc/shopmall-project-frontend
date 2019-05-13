@@ -1,5 +1,5 @@
 import React from "react";
-import Agreement from "../Components/Join/Agreement"
+import Agreement from "./Join/Agreement"
 
 
 export default () => (

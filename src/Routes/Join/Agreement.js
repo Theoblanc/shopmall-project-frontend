@@ -125,10 +125,6 @@ export default () => (
             <Step />
             <Form />
 
-
-    
-
-
         </Layout>
     </LayoutFull>
 

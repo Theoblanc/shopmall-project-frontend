@@ -2,12 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 
-
-
-
-
-const JoinStepWrap = styled.div``;
-
 const JoinStep = styled.div`
 margin: 30px auto;
 zoom: 1;
@@ -50,7 +44,7 @@ const StepText = styled.span`
 `;
 
 export default () => (
-    <JoinStepWrap>
+    <div>
         <JoinStep>
             <StepUl>
                 <StepLi>
@@ -100,8 +94,6 @@ export default () => (
             </StepUl>
 
         </JoinStep>
-
-
-    </JoinStepWrap>
+    </div>
 
 );
