@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Feed from "../Routes/Feed";
-import Join from "../Routes/SignUp";
+import Join from "../Routes/Join";
 import login from "../Routes/Login/LoginPresenter"
 
 

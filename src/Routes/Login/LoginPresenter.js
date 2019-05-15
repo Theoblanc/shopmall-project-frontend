@@ -4,101 +4,149 @@ import { Home } from "../../Images/Icons";
 
 
 const LayoutFull = styled.div`
-    width: 1250px;
-    margin: auto;
-`;
+        width: 1250px;
+        margin: auto;
+        min-height: 500px;
+
+    `;
 
 const Layout = styled.div`
-    float: left;
-    width: 100%;
-    background-color:${props => props.theme.backgroundColor}  
-`;
+        float: left;
+        width: 100%;
+        background-color:${props => props.theme.backgroundColor}  
+    `;
 
 const Category = styled.div`
-    float: right;
-    margin-bottom: 20px;
-    line-height: 1.4;
-    font-size: 12px;
-    
+        float: right;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        font-size: 12px;
+        
 
-`;
+    `;
 
 const IconList = styled.ul`
-    float: left;
-    list-style: none;
-    vertical-align: middle;
+        float: left;
+        list-style: none;
+        vertical-align: middle;
 
-`;
+    `;
 
 const IconListItem = styled.li`
-    position: relative;
-    float: left;
-    padding-right: 5px;
-    color: #999;
-    vertical-align: middle;
+        position: relative;
+        float: left;
+        padding-right: 5px;
+        color: #999;
+        vertical-align: middle;
 
 
 
-`;
+    `;
 
 const TextList = styled.li`
-padding-left: 10px;
-position: relative;
-float: left;
-margin-top: 2px;
-padding-right: 5px;
-color: #999;
+    padding-left: 10px;
+    position: relative;
+    float: left;
+    margin-top: 2px;
+    padding-right: 5px;
+    color: #999;
 
-`;
+    `;
 
 const IconLink = styled.a`
 
-`;
+    `;
 
 
 
 const LoginNameWrap = styled.div`
-    clear: both;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 30px;
-`
+        clear: both;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 30px;
+    `
 
 const LoginName = styled.h3`
-    position: relative;
-    padding-top: 20px;
-    font-size: 17px;
-    font-weight: 400;
-    color: #000;
-    letter-spacing: 0;
-`;
+        position: relative;
+        padding-top: 20px;
+        font-size: 17px;
+        font-weight: 400;
+        color: #000;
+        letter-spacing: 0;
+    `;
 
 const SubName = styled.p`
-    margin-top: 10px;
-    font-size: 12px;
-    color: #888;
-    line-height: 1.4;
-`;
+        margin-top: 10px;
+        font-size: 12px;
+        color: #888;
+        line-height: 1.4;
+    `;
 
 const LoginWrap = styled.div`
-width: 370px;
-margin: 0 auto;
-text-align: center;
-`
+    width: 370px;
+    margin: 0 auto;
+    text-align: center;
+    `
 
-const LoginForm = styled.div`
-
-`
 
 const Input = styled.input`
-width: calc(100% - 12px);
-height: 40px;
-line-height: 40px;
-border: 1px solid #e0e0e0;
-padding-left: 10px;
-font-size: 14px;
-margin-bottom: 10px;
-`
+    width: calc(100% - 12px);
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #e0e0e0;
+    padding-left: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    `
+
+const LoginList = styled.ul`
+    display: block;
+    vertical-align: middle;
+    zoom: 1;
+    list-style: none;
+
+    li {
+        display: list-item;
+        text-align: center;
+        list-style: none;
+        font-size: 12px;
+        float: right;
+        padding-left: 8px;
+
+
+        &:first-child {
+            float: left;
+        }
+
+        input {
+            width: 15px;
+            height: 15px;
+            vertical-align: middle !important;
+            margin-left: 0;
+            margin-right: 0;
+            font-size: 12px;
+            color: #000;
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+
+        }
+
+        &::after {
+            clear: both;
+            display: block;
+            content: '';
+        }
+
+    }
+
+
+    `;
 
 
 
@@ -118,7 +166,7 @@ export default () => (
                         </IconListItem>
                         <TextList>
                             로그인
-                    </TextList>
+                        </TextList>
                     </IconList>
                 </Category>
 
@@ -133,11 +181,19 @@ export default () => (
                                 <Input type="text" name="userid" placeholder="아이디" />
                                 <Input type="password" password="password" name="password" placeholder="비밀번호" />
                                 <Input type="submit" value="로그인" />
+
                             </div>
 
                         </fieldset>
+
                     </form>
+                    <LoginList>
+                        <li><input type="checkbox" name="idsave" value="checked" /> <label for="idsave">아이디 저장</label></li>
+                        <li><a href="/member/agreement">회원가입</a>&nbsp; | &nbsp;<a href="/member/find">아이디/비밀번호 찾기</a></li>
+                    </LoginList>
                 </LoginWrap>
+
+
 
             </Layout>
         </LayoutFull>

@@ -1,14 +1,25 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const Anim = keyframes`
+    from{
+        height: 0px;
+        opacity: 0
+
+    }
+    to {
+        height: max;
+        opacity: 0.78
+    }
+`; 
 
 const CategorySub = styled.div`
         display: none;
-        height: 0;
         background: rgba(255,255,255,0.9);
         height: 150px;
-        border-bottom: 1px solid #ddd;
-        transition: height 5s linear;
         opacity: 0.78
+        border-bottom: 1px solid #ddd;
+        animation: ${Anim} 0.3s linear;
         position: absolute;
         top: 1px;
         left: 0;
@@ -54,19 +65,14 @@ const List = styled.ul`
         width: 100%;
         vertical-align: middle;
         text-align: center;
-        &:hover {
-            ${CategorySub} {
-                display: block;
-                height: max;
-      
-            }
+
 
     `;
 
 const ListItem = styled.li`
         display: inline-block;
         width:12.345679012346%;
- 
+
  
           
 

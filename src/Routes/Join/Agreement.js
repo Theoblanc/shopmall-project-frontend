@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Home } from "../../Images/Icons";
-import Step from "./Step";
-import Form from "./Form";
+
 
 
 const LayoutFull = styled.div`
@@ -121,9 +120,7 @@ export default () => (
                 </SubTitle>
             </H3Wrap>
 
-            
-            <Step />
-            <Form />
+
 
         </Layout>
     </LayoutFull>

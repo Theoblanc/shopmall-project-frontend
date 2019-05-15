@@ -1,6 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+const LayoutFull = styled.div`
+    width: 1250px;
+    margin: auto;
+`;
+
+const Layout = styled.div`
+    float: left;
+    width: 100%;
+    background-color:${props => props.theme.backgroundColor}  
+`;
+
+
 
 const JoinStep = styled.div`
 margin: 30px auto;
@@ -44,7 +56,8 @@ const StepText = styled.span`
 `;
 
 export default () => (
-    <div>
+    <LayoutFull>
+        <Layout>
         <JoinStep>
             <StepUl>
                 <StepLi>
@@ -94,6 +107,7 @@ export default () => (
             </StepUl>
 
         </JoinStep>
-    </div>
+        </Layout>
+    </LayoutFull>
 
 );

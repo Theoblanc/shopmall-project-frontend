@@ -24,13 +24,13 @@ const Container = styled.input`
 `;
 
 
-const Input = ({ name, required = true, value, type, onChange }) => <Container 
+const Input = ({ name, required = true, value, type, onChange }) => <Container
     name={name}
     required={required}
-    value={value}
+    value={ value }
     onChange={onChange}
     type={type}
-    />
+/>
 
 
 Input.prototype = {
