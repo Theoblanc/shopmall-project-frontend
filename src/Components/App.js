@@ -29,7 +29,7 @@ return (
         <Header />
         <Nav />
         <Toolbar />
-        <Router isLoggedIn={isLoggedIn}/>
+        <Router isLoggedIn={ isLoggedIn }/>
 
         <Footer />
       </>

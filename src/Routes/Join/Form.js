@@ -129,16 +129,30 @@ const SubmitBtn = styled.input`
     background: rgb(51, 51, 51);
 `
 
-const CancelBtn = styled.button`
-	padding: 12px 10px;
+const CancelBtn = styled.a`
+    padding: 9.4px 60.3px;
+    color: #ffffff;
+    min-height: 40px;
 	min-width: 150px;
 	font-size: 14px;
 	border-width: 1px;
 	border-style: solid;
 	border-color: rgb(170, 170, 170);
 	border-image: initial;
-	background: rgb(170, 170, 170);
+    background: rgb(170, 170, 170);
+    &:hover {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+
 `
+
+const Link = styled.a`
+
+`
+
+
 
 const Submit = ({ type, value }) => <SubmitBtn type={ type } value={ value } />
 
@@ -179,82 +193,30 @@ export default ({
                     <tbody>
                         <tr>
                             <th scope="row" >이름</th>
-                            <td><Input type="text" size="20" name="user_name" {...userName} /></td>
+                            <td><Input type="text" size="20" name="user_name" {...userName} required  /></td>
                         </tr>
                         <tr>
                             <th scope="row" >아이디</th>
                             <td>
-                                <Input type="text" size="20" name="userid" {...userID} /> <span>공백 없는 영문, 숫자 포함 6-20자</span>
+                                <Input type="text" size="20" name="userid" {...userID} required/> <span>공백 없는 영문, 숫자 포함 6-20자</span>
                                 <span></span>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row" >비밀번호</th>
-                            <td><Input type="password" size="20" name="password" {...password} /> <span>공백 없는 영문, 숫자 포함 6-20자 </span></td>
+                            <td><Input type="password" size="20" name="password" {...password} required/> <span>공백 없는 영문, 숫자 포함 6-20자 </span></td>
                         </tr>
                         <tr>
                             <th scope="row" >비밀번호 확인</th>
-                            <td><Input type="password" size="20" name="re_password" {...rePassword} /> <span>비밀번호 확인을 위해 한번 더 입력하세요.</span></td>
+                            <td><Input type="password" size="20" name="re_password" {...rePassword} required/> <span>비밀번호 확인을 위해 한번 더 입력하세요.</span></td>
                         </tr>
                         <tr>
                             <th scope="row" >닉네임</th>
-                            <td><Input type="text" maxlength="10" size="20" name="nickname" {...nickname} /></td>
+                            <td><Input type="text" maxlength="10" size="20" name="nickname" {...nickname} required /></td>
                         </tr>
                         <tr>
                             <th scope="row">생년월일</th>
-                            <td><Input type="text" name="birthday" maxlength="10" size="20"  {...birthday} /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">기념일</th>
-                            <td>
-                                <select name="anniversary[]">
-                                    <option value="01" >01</option>
-                                    <option value="02" >02</option>
-                                    <option value="03" >03</option>
-                                    <option value="04" >04</option>
-                                    <option value="05" >05</option>
-                                    <option value="06" >06</option>
-                                    <option value="07" >07</option>
-                                    <option value="08" >08</option>
-                                    <option value="09" >09</option>
-                                    <option value="10" >10</option>
-                                    <option value="11" >11</option>
-                                    <option value="12" >12</option>
-                                </select>&nbsp;월&nbsp;
-				                <select name="anniversary[]">
-                                    <option value="01" >01</option>
-                                    <option value="02" >02</option>
-                                    <option value="03" >03</option>
-                                    <option value="04" >04</option>
-                                    <option value="05" >05</option>
-                                    <option value="06" >06</option>
-                                    <option value="07" >07</option>
-                                    <option value="08" >08</option>
-                                    <option value="09" >09</option>
-                                    <option value="10" >10</option>
-                                    <option value="11" >11</option>
-                                    <option value="12" >12</option>
-                                    <option value="13" >13</option>
-                                    <option value="14" >14</option>
-                                    <option value="15" >15</option>
-                                    <option value="16" >16</option>
-                                    <option value="17" >17</option>
-                                    <option value="18" >18</option>
-                                    <option value="19" >19</option>
-                                    <option value="20" >20</option>
-                                    <option value="21" >21</option>
-                                    <option value="22" >22</option>
-                                    <option value="23" >23</option>
-                                    <option value="24" >24</option>
-                                    <option value="25" >25</option>
-                                    <option value="26" >26</option>
-                                    <option value="27" >27</option>
-                                    <option value="28" >28</option>
-                                    <option value="29" >29</option>
-                                    <option value="30" >30</option>
-                                    <option value="31" >31</option>
-                                </select>&nbsp;일
-			                </td>
+                            <td><Input type="text" name="birthday" maxlength="10" size="20"  {...birthday} required /></td>
                         </tr>
 
                         <tr>
@@ -266,7 +228,7 @@ export default ({
                         </tr>
                         <tr>
                             <th scope="row" >이메일</th>
-                            <td><Input type="text" name="email[0]" size="20" {...email0} /> @ <Input type="text" name="email[1]" size="20" {...email1} />
+                            <td><Input type="text" name="email[0]" size="20" {...email0} required/> @ <Input type="text" name="email[1]" size="20" {...email1} required/>
                                 &nbsp;
 			                    <select name="find_email" {...findEmail} >
                                     <option value="">직접선택</option>
@@ -283,18 +245,18 @@ export default ({
                                     <option value="freechal.com">freechal.com</option>
                                     <option value="hanmail.net">hanmail.net</option>
                                     <option value="hotmail.com">hotmail.com</option>
-                                </select> &nbsp;<label><Input type="checkbox" name="mailing" value="Y" {...mailing} /> 정보메일을 수신하겠습니다.</label>
+                                </select> &nbsp;<label><Input type="checkbox" name="mailing" {...mailing} value="Y" /> 정보메일을 수신하겠습니다.</label>
                                 <div>이메일 수신에 동의하시면 여러가지 할인혜택과 각종 이벤트 정보를 받아보실 수 있습니다.<br />회원가입관련, 주문배송관련 등의 메일은 수신동의와 상관없이 모든 회원에게 발송됩니다.</div></td>
                         </tr>
 
                         <tr>
                             <th scope="row">전화번호</th>
-                            <td><Input type="text" name="phone[]" size="6" maxlength="4" {...phone1} /> - <Input type="text" name="phone[]" size="6" maxlength="4" {...phone2} /> - <Input type="text" name="phone[]" size="6" maxlength="4" {...phone3} /></td>
+                            <td><Input type="text" name="phone[]" size="6" maxlength="4" {...phone1} required/> - <Input type="text" name="phone[]" size="6" maxlength="4" {...phone2} required/> - <Input type="text" name="phone[]" size="6" maxlength="4" {...phone3} required /></td>
                         </tr>
                         <tr>
                             <th scope="row">휴대폰번호</th>
                             <td>
-                                <Input type="text" name="cellphone[]" size="6" maxlength="4" {...cellphone1} /> - <Input type="text" name="cellphone[]" size="6" maxlength="4" {...cellphone2} /> - <Input type="text" name="cellphone[]" size="6" maxlength="4" {...cellphone3} />
+                                <Input type="text" name="cellphone[]" size="6" maxlength="4" {...cellphone1} required/> - <Input type="text" name="cellphone[]" size="6" maxlength="4" {...cellphone2} required/> - <Input type="text" name="cellphone[]" size="6" maxlength="4" {...cellphone3} required/>
                                 &nbsp;<label><Input type="checkbox" name="sms" {...sms} value="Y" /> SMS를 수신하겠습니다.</label>
                                 <div>SMS 수신에 동의하시면 여러가지 할인혜택과 각종 이벤트 정보를 받아보실 수 있습니다.<br />회원가입관련, 주문배송관련 등의 SMS는 수신동의와 상관없이 구매 회원에게 발송됩니다.</div>
                             </td>
@@ -303,9 +265,9 @@ export default ({
                             <th scope="row">주소</th>
                             <td>
                                 <div>
-                                    <Input type="text" name="new_zipcode" size="15"  {...new_zipcode} /> <a href="#">주소찾기</a>
+                                    <Input type="text" name="new_zipcode" size="15"  {...new_zipcode} required/> <Link href="#">주소찾기</Link>
                                 </div>
-                                <Input type="hidden" name="address_type" {...address_type} /><Input type="text" name="address" {...address} size="35" readonly /> <Input type="text" name="address_detail" size="40" />
+                                    <Input type="text" name="address" {...address} size="35" readonly required/> <Input type="text" name="address_type" size="40" {...address_type} required/>
                                 <div></div>
                             </td>
                         </tr>
@@ -316,7 +278,9 @@ export default ({
                 </Table>
 				<BtnWrap>
 					<Submit type="submit" value="회원가입"></Submit>
-					<CancelBtn>취소</CancelBtn>
+                    &nbsp;&nbsp;
+
+					<CancelBtn as = "a" href="#">취소</CancelBtn>
 
 
 				</BtnWrap>

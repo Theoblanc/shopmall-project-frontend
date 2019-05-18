@@ -29,51 +29,39 @@ export default () => {
     const address_type = useInput("");
     const address = useInput("");
 
-    console.log(userName, userID);
 
     const createAccountMutation = useMutation(CREATE_ACCOUNT, {
         variables: {
-            userName: userName.value,
-            userID: userID.value,
-            password: password.value,
-            rePassword: rePassword.value,
-            nickname: nickname.value,
-            birthday: birthday.value,
-            gender: gender.value,
-            email: email0.value + email1.value,
-            mailing: mailing.value,
-            phone: phone1.value + phone2.value + phone3.value,
-            cellphone: cellphone1.value + cellphone2.value + cellphone3.value,
+            user_name: userName.value ,
+            userid: userID.value ,
+            password: password.value ,
+            re_passwored: rePassword.value ,
+            nickname: nickname.value , 
+            birthday: birthday.value ,
+            gender: gender.value ,
+            email: email0.value + email1.value , 
+            find_email: findEmail.value ,            
+            mailing: mailing.value ,            
+            phone: parseInt(phone1.value + phone2.value + phone3.value) , 
+            cellPhone: parseInt(cellphone1.value + cellphone2.value + cellphone3.value),
             sms: sms.value,
-            new_zipcode: new_zipcode.value,
-            address_type: address_type.value + address.value,
+            zipCode: new_zipcode.value ,
+            address: address.value  + address_type.value
         }
     });
 
     const onSubmit = async e => {
         e.preventDefault();
-
         if (action === "signUp") {
 
             if (userName.value !== "" &&
                 userID.value !== "" &&
                 password.value !== "" &&
                 rePassword.value !== "" &&
-                nickname.value !== "" &&
-                birthday.value !== "" &&
-                gender.value !== "" &&
-                email0.value !== "" &&
-                email1.value !== "" &&
-                findEmail.value !== "" &&
-                phone1.value !== "" &&
-                phone2.value !== "" &&
-                phone3.value !== "" &&
-                cellphone1.value !== "" &&
-                cellphone2.value !== "" &&
-                cellphone3.value !== "" &&
-                new_zipcode.value !== "" &&
-                address_type.value !== "" &&
-                address.value !== ""
+                nickname.value !== "" 
+  
+
+
             ) {
                 try {
                     const {
@@ -81,15 +69,21 @@ export default () => {
                     } = await createAccountMutation();
                     if (!createAccount) {
                         toast.error("Can't create account");
+                        console.log(userName,
+                            );
                     } else {
                         toast.success("Account created! Log In now");
                         setTimeout(() => setAction("logIn"), 3000);
+
                     }
                 } catch (e) {
                     toast.error(e.message);
+        
+                   
                 }
             } else {
                 toast.error("All field are required");
+  
             }
         }
 

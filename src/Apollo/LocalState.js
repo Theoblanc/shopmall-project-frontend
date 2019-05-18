@@ -3,6 +3,7 @@ export const defaults = {
   
 }
 
+
 export const resolvers = {
   Mutation: {
       logUserIn: (_, {token}, {cache}) => {
