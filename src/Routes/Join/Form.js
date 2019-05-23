@@ -154,7 +154,7 @@ const Link = styled.a`
 
 
 
-const Submit = ({ type, value }) => <SubmitBtn type={ type } value={ value } />
+const Submit = ({ type }) => <SubmitBtn type={ type } />
 
 export default ({
     action,
@@ -268,7 +268,6 @@ export default ({
                                     <Input type="text" name="new_zipcode" size="15"  {...new_zipcode} required/> <Link href="#">주소찾기</Link>
                                 </div>
                                     <Input type="text" name="address" {...address} size="35" readonly required/> <Input type="text" name="address_type" size="40" {...address_type} required/>
-                                <div></div>
                             </td>
                         </tr>
 

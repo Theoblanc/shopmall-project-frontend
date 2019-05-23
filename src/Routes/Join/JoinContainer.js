@@ -15,7 +15,7 @@ export default () => {
     const birthday = useInput("");
     const gender = useInput("");
     const email0 = useInput("");
-    const email1 = useInput("");
+    const email1 = useInput("@");
     const findEmail = useInput("");
     const mailing = useInput("");
     const phone1 = useInput("");
@@ -53,15 +53,12 @@ export default () => {
     const onSubmit = async e => {
         e.preventDefault();
         if (action === "signUp") {
-
             if (userName.value !== "" &&
                 userID.value !== "" &&
                 password.value !== "" &&
                 rePassword.value !== "" &&
                 nickname.value !== "" 
   
-
-
             ) {
                 try {
                     const {
@@ -69,12 +66,11 @@ export default () => {
                     } = await createAccountMutation();
                     if (!createAccount) {
                         toast.error("Can't create account");
-                        console.log(userName,
-                            );
+
                     } else {
                         toast.success("Account created! Log In now");
                         setTimeout(() => setAction("logIn"), 3000);
-
+                        window.location = "/";
                     }
                 } catch (e) {
                     toast.error(e.message);

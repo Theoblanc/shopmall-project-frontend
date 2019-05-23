@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Header = styled.nav`
+
+const Header = styled.header`
     border-color:${props => props.theme.borderColor};
     background:${props => props.theme.backgroundColor};
     font-size:11px;
     height:30px;
     line-height:40px;
     z-index: 11;
-
 `;
 
 const Warp = styled.div`
@@ -23,8 +23,6 @@ const List = styled.ul`
     position: absolute;
     top: 0;
     right: 0;
-
-
 `;
 
 const ListItem = styled.li`
@@ -32,12 +30,9 @@ const ListItem = styled.li`
     padding: 9px 5px 9px;   
     line-height: 1;
     text-align: -webkit-match-parent;
-
 `;
 
 const Link = styled.a`
-
-
 
 `;
 

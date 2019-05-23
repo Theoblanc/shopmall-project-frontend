@@ -20,15 +20,12 @@ const Category = styled.div`
     margin-bottom: 20px;
     line-height: 1.4;
     font-size: 12px;
-    
-
 `;
 
 const IconList = styled.ul`
     float: left;
     list-style: none;
     vertical-align: middle;
-
 `;
 
 const IconListItem = styled.li`
@@ -37,8 +34,6 @@ const IconListItem = styled.li`
     padding-right: 5px;
     color: #999;
     vertical-align: middle;
-
-
 
 `;
 

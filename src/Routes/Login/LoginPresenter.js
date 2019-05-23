@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Home } from "../../Images/Icons";
+import LoginInput from "../../Components/LoginInput";
+
+
 
 
 const LayoutFull = styled.div`
@@ -87,18 +90,7 @@ const LoginWrap = styled.div`
     margin: 0 auto;
     text-align: center;
     `
-
-
-const Input = styled.input`
-    width: calc(100% - 12px);
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #e0e0e0;
-    padding-left: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-    `
-
+    
 const LoginList = styled.ul`
     display: block;
     vertical-align: middle;
@@ -135,6 +127,7 @@ const LoginList = styled.ul`
             display: inline-block;
             text-align: start;
 
+
         }
 
         &::after {
@@ -145,15 +138,19 @@ const LoginList = styled.ul`
 
     }
 
-
     `;
 
 
+  
+
+    
 
 
-export default () => (
 
+
+export default ({onSubmit, userID, password, action}) => (
     <>
+
         <LayoutFull>
             <Layout>
                 <Category>
@@ -175,12 +172,12 @@ export default () => (
                     <SubName>회원 로그인을 하시면 각종 혜택 및 정보를 제공 받으실 수 있습니다.</SubName>
                 </LoginNameWrap>
                 <LoginWrap>
-                    <form>
+                    <form action={action} onSubmit={onSubmit}>
                         <fieldset>
                             <div>
-                                <Input type="text" name="userid" placeholder="아이디" />
-                                <Input type="password" password="password" name="password" placeholder="비밀번호" />
-                                <Input type="submit" value="로그인" />
+                                <LoginInput type="text" name="userid" placeholder="아이디" {...userID} />
+                                <LoginInput type="password" name="password" placeholder="비밀번호" {...password} />
+                                <LoginInput type="submit" value="로그인" />
 
                             </div>
 
@@ -188,7 +185,7 @@ export default () => (
 
                     </form>
                     <LoginList>
-                        <li><input type="checkbox" name="idsave" value="checked" /> <label for="idsave">아이디 저장</label></li>
+                        <li><LoginInput type="checkbox" name="idsave" value="checked" /> <label>아이디 저장</label></li>
                         <li><a href="/member/agreement">회원가입</a>&nbsp; | &nbsp;<a href="/member/find">아이디/비밀번호 찾기</a></li>
                     </LoginList>
                 </LoginWrap>

@@ -1,10 +1,14 @@
 import React from "react";
-import { gql} from "apollo-boost";
+import { gql } from "apollo-boost";
 import { ThemeProvider } from "styled-components";
-import GlobalStyles from "../Styles/GlobalStyles"
+import GlobalStyles from "../Styles/GlobalStyles";
+import { HashRouter as Router } from "react-router-dom";
+
 import Theme from "../Styles/Theme";
-import Router from "./Router";
+import Routes from "./Routes";
 import { useQuery } from "react-apollo-hooks";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Header from "./Header";
 import Nav from "./Nav";
 import Toolbar from "./Toolbar";
@@ -22,17 +26,23 @@ export default () => {
     data: { isLoggedIn }
   } = useQuery(QUERY);
 
-return (
-<ThemeProvider theme={Theme}>
+  return (
+    <ThemeProvider theme={Theme}>
       <>
         <GlobalStyles />
-        <Header />
-        <Nav />
-        <Toolbar />
-        <Router isLoggedIn={ isLoggedIn }/>
+            <Header />
+            <Nav />
+            <Toolbar />
+            <Router>
+            <>
+              <Routes isLoggedIn={isLoggedIn} />
+            </>
 
-        <Footer />
+            </Router>
+            <Footer />
+        <ToastContainer position={toast.POSITION.BOTTOM_LEFT} />
       </>
-  </ThemeProvider>
+    </ThemeProvider>
   );
 }
+
