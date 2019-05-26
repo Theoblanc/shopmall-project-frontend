@@ -1,5 +1,7 @@
 # shopmall-project-frontend
 
--[ ] Main
--[ ] SignUp
+-[x] Main
+
+-[x] SignUp
+
 -[ ] Login

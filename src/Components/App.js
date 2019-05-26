@@ -13,6 +13,7 @@ import Header from "./Header";
 import Nav from "./Nav";
 import Toolbar from "./Toolbar";
 import Footer from "./Footer";
+import LoginHeader from "./LoginHeader";
 
 
 const QUERY = gql`
@@ -30,11 +31,12 @@ export default () => {
     <ThemeProvider theme={Theme}>
       <>
         <GlobalStyles />
-            <Header />
-            <Nav />
-            <Toolbar />
-            <Router>
+        <Router>
+
             <>
+              {isLoggedIn ? <LoginHeader/>: <Header /> }
+              <Nav />
+              <Toolbar />
               <Routes isLoggedIn={isLoggedIn} />
             </>
 

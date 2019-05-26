@@ -148,7 +148,7 @@ const LoginList = styled.ul`
 
 
 
-export default ({onSubmit, userID, password, action}) => (
+export default ({onSubmit, userid, password, action}) => (
     <>
 
         <LayoutFull>
@@ -175,8 +175,8 @@ export default ({onSubmit, userID, password, action}) => (
                     <form action={action} onSubmit={onSubmit}>
                         <fieldset>
                             <div>
-                                <LoginInput type="text" name="userid" placeholder="아이디" {...userID} />
-                                <LoginInput type="password" name="password" placeholder="비밀번호" {...password} />
+                                <LoginInput type="text" name="userid" placeholder="아이디" {...userid} required/>
+                                <LoginInput type="password" name="password" placeholder="비밀번호" {...password} required />
                                 <LoginInput type="submit" value="로그인" />
 
                             </div>
