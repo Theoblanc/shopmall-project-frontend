@@ -48,7 +48,7 @@ export default () => (
             <List>
                 <ListItem><Logout /></ListItem>
                 <ListItem><Link href="/#join">JOIN</Link></ListItem>
-                <ListItem><Link href="#">CART</Link></ListItem>
+                <ListItem><Link href="/#cart">CART</Link></ListItem>
                 <ListItem><Link href="#">ORDER</Link></ListItem>
                 <ListItem><Link href="#">MYPAGE</Link></ListItem>
                 <ListItem><Link href="#">CSCENTER</Link></ListItem>

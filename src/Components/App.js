@@ -16,6 +16,7 @@ import Footer from "./Footer";
 import LoginHeader from "./LoginHeader";
 
 
+
 const QUERY = gql`
   {
     isLoggedIn @client
@@ -33,15 +34,15 @@ export default () => {
         <GlobalStyles />
         <Router>
 
-            <>
-              {isLoggedIn ? <LoginHeader/>: <Header /> }
-              <Nav />
-              <Toolbar />
-              <Routes isLoggedIn={isLoggedIn} />
-            </>
+          <>
+            {isLoggedIn ? <LoginHeader /> : <Header />}
+            <Nav />
+            <Toolbar />
+                <Routes isLoggedIn={isLoggedIn} />
+          </>
 
-            </Router>
-            <Footer />
+        </Router>
+        <Footer />
         <ToastContainer position={toast.POSITION.BOTTOM_LEFT} />
       </>
     </ThemeProvider>

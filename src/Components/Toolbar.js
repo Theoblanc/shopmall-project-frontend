@@ -124,14 +124,14 @@ export default () => (
         <Toobar>
             <Warp>
                 <List>
-                    <ListItem><Link href="#">BEDROOM</Link></ListItem>
-                    <ListItem><Link href="#">LIVINGLOOM</Link></ListItem>
-                    <ListItem><Link href="#">KITCHEN</Link></ListItem>
-                    <ListItem><Link href="#">KIDS</Link></ListItem>
-                    <ListItem><Link href="#">STUDY</Link></ListItem>
-                    <ListItem><Link href="#">CHAIR</Link></ListItem>
-                    <ListItem><Link href="#">LIGHTING</Link></ListItem>
-                    <ListItem><Link href="#">ACCESSORY</Link></ListItem>
+                    <ListItem><Link href="/#item">BEDROOM</Link></ListItem>
+                    <ListItem><Link href="/#item">LIVINGLOOM</Link></ListItem>
+                    <ListItem><Link href="/#item">KITCHEN</Link></ListItem>
+                    <ListItem><Link href="/#item">KIDS</Link></ListItem>
+                    <ListItem><Link href="/#item">STUDY</Link></ListItem>
+                    <ListItem><Link href="/#item">CHAIR</Link></ListItem>
+                    <ListItem><Link href="/#item">LIGHTING</Link></ListItem>
+                    <ListItem><Link href="/#item">ACCESSORY</Link></ListItem>
                 </List>
             </Warp>
         </Toobar>
@@ -142,53 +142,53 @@ export default () => (
                 <CategorySub>
                     {/* BEDROOM */}
                     <CategorySub2>
-                        <Good><GoodLink><br /></GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
                     </CategorySub2>
                     {/* LIVINGLOOM */}
                     <CategorySub2>
-                        <Good><GoodLink><br /></GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
                     </CategorySub2>
                     {/* KITCHEN */}
                     <CategorySub2>
-                        <Good><GoodLink>TABLE</GoodLink></Good>
-                        <Good><GoodLink>DRAWER</GoodLink></Good>
-                        <Good><GoodLink>ETC</GoodLink></Good>
+                        <Good><GoodLink href="/#item">TABLE</GoodLink></Good>
+                        <Good><GoodLink href="/#item">DRAWER</GoodLink></Good>
+                        <Good><GoodLink href="/#item">ETC</GoodLink></Good>
                     </CategorySub2>
                     {/* KIDS */}
                     <CategorySub2>
-                        <Good><GoodLink><br /></GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
                     </CategorySub2>
                     {/* STUDY */}
                     <CategorySub2>
-                        <Good><GoodLink>DESK</GoodLink></Good>
-                        <Good><GoodLink>CHAIR</GoodLink></Good>
-                        <Good><GoodLink>BOOKCASE</GoodLink></Good>
+                        <Good><GoodLink href="/#item">DESK</GoodLink></Good>
+                        <Good><GoodLink href="/#item">CHAIR</GoodLink></Good>
+                        <Good><GoodLink href="/#item">BOOKCASE</GoodLink></Good>
                     </CategorySub2>
                     {/* CHAIR */}
                     <CategorySub2>
-                        <Good><GoodLink>STOOL</GoodLink></Good>
-                        <Good><GoodLink>SYSTEM</GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item">STOOL</GoodLink></Good>
+                        <Good><GoodLink href="/#item">SYSTEM</GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
 
                     </CategorySub2>
                     {/* LIGHTING */}
                     <CategorySub2>
-                        <Good><GoodLink>STAND</GoodLink></Good>
-                        <Good><GoodLink>PENDANT</GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item">STAND</GoodLink></Good>
+                        <Good><GoodLink href="/#item">PENDANT</GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
 
                     </CategorySub2>
                     {/* ACCESSORY */}
                     <CategorySub2>
-                        <Good><GoodLink>JEWELRY</GoodLink></Good>
-                        <Good><GoodLink>SCARF</GoodLink></Good>
-                        <Good><GoodLink><br /></GoodLink></Good>
+                        <Good><GoodLink href="/#item">JEWELRY</GoodLink></Good>
+                        <Good><GoodLink href="/#item">SCARF</GoodLink></Good>
+                        <Good><GoodLink href="/#item"><br /></GoodLink></Good>
 
                     </CategorySub2>
                 </CategorySub>

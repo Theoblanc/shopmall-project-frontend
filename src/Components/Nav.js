@@ -70,7 +70,7 @@ export default () => (
         <Warp>
             <IconsLink href="#"><Logo><img src={ require('../Images/logo.jpg') } alt="회사명"/></Logo></IconsLink>
             <List>
-                <ListItem><Link href="#">STORIES</Link></ListItem>
+                <ListItem><Link href="/#item">STORIES</Link></ListItem>
                 <ListItem><Link href="#">PROJECTS</Link></ListItem>
                 <ListItem><Link href="#">COLLECTION</Link></ListItem>
                 <ListItem><Link href="#">BLOG</Link></ListItem>
