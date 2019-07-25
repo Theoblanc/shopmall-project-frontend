@@ -1,7 +1,6 @@
 # shopmall-project-frontend
 
--[x] Main
-
--[x] SignUp
-
--[x] Login
+- [x] MAIN
+- [x] LOGIN(TOKEN)
+- [x] LOGOUT
+- [x] ITEMVIEW
